@@ -5,7 +5,11 @@
 
 Follow this to **[install a microk8s kubernetes cluster](https://www.devopswiki.co.uk/kubernetes/microk8s-install)** on your laptop and optionally other nodes.
 
-## Run Jenkins on Kubernetes
+
+---
+
+
+## Step 1 | Run Jenkins on Kubernetes
 
 These are the **3 commands** to run both the Jenkins master and the workers on a (possibly) distributed Kubernetes cluster.
 
@@ -17,11 +21,11 @@ kubectl apply -f jenkins-deployment.yaml
 
 That's it. Your Kubernetes orchestrated Jenkins cluster is ready.
 
-## Visit Jenkins | Run Pipeline Jobs
 
-The Kubernetes plugin comes pre-installed and configured in this Jenkins docker image - **[see the Dockerfile](Dockerfile)**.
+---
 
-## View the Jenkins Pipeline jobs running in Kubernetes
+
+## Step 2 | View Jenkins jobs running in Kubernetes
 
 The sample jobs include
 - a JAVA microservice and
@@ -35,12 +39,16 @@ watch kubectl get pods -o wide
 
 Visit the Jenkins UI with the IP address against the Jenkins service. Go to the jobs, click **`Build Now`** and then watch both the logs and the pods showing Kubernetes running dockerized pipelines on one or more nodes.
 
-## The Kubernetes Jenkins Plugin
+
+---
+
+
+## Appendix | Kubernetes Jenkins Plugin
 
 To view or change how the Kubernetes plugin configuration go to Jenkins | Manage Jenkins | Configure System and scroll down to the clouds section. The default configuration assumes
 
 - the kubernetes API url is **`https://kubernetes.default.svc`** from inside the cluster
 - the Jenkins master url the slaves connect to is **`http://jenkins`** as **jenkins** is the service name
-- the Jenkins master and slaves (workers) are all running in the **`default`** Kubernetes namespace
+- the Jenkins master and slaves pods all run in the **`default`** Kubernetes namespace
 
-This **[sample Java microservice](https://github.com/apolloakora/bank-account)** shows how the Jenkinsfile and the pod-template yaml are written to fascilitate execution on a Kubernetes platform.
+This **[sample Java microservice](https://github.com/apolloakora/bank-account)** shows how the **Jenkinsfile** and the **pod-template yaml** are written to fascilitate execution on a Kubernetes platform.
