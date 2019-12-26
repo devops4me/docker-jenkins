@@ -15,7 +15,7 @@ spec:
         spec:
             containers:
             -   name: vm-jenkins
-                image: devops4me/jenkins:0.1.1001-201912221803
+                image: devops4me/jenkins:latest
                 ports:
                 -   containerPort: 8080
                 -   containerPort: 50000
