@@ -14,8 +14,8 @@ Follow this to **[install a microk8s kubernetes cluster](https://www.devopswiki.
 These are the **3 commands** to run both the Jenkins master and the workers on a (possibly) distributed Kubernetes cluster.
 
 ```
-git clone https://github.com/devops4me/docker-jenkins-cluster.git
-cd docker-jenkins-cluster
+git clone https://github.com/devops4me/docker-jenkins.git
+cd docker-jenkins
 kubectl apply -f jenkins-deployment.yaml
 ```
 
