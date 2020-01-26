@@ -42,6 +42,7 @@ RUN /usr/local/bin/install-plugins.sh \
     docker-workflow       \
     workflow-multibranch  \
     kubernetes            \
+    scmskip               \
     workflow-scm-step
 
 
